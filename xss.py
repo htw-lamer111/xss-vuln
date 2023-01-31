@@ -50,4 +50,3 @@ try:
             print(resp.status_code)
 except KeyboardInterrupt:
     print("Good bye....")
-#https://e-cis.info/index.php?id=8

@@ -30,7 +30,7 @@ print(Fore.GREEN, """
                                                                                                       
     """)
 print("=" * 50)
-print("site example https://site.com/index.php?id=")
+print("site example https://site.com/index.php?id=1")
 d = {}
 file = open("list.txt", "r", encoding="utf-8")
 onstring = file.read().split("\n")[:-1]

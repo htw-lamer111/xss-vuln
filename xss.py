@@ -48,7 +48,7 @@ try:
             for script in supchik.find_all('script'):
                 script=str(script)
                 if script == bebra:
-                    print("XSS FOUND:", respurl, script )
+                    print("XSS FOUND:", respurl )
                 elif script != bebra:
                     print("XSS NOT FOUND: ",respurl )   
                 else:

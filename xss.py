@@ -41,7 +41,7 @@ vizilom=input("site url:")
 try:
     for bebra in onstring:
         resp = requests.get(vizilom+bebra)
-        respurl = vizilom+bebra
+        respurl = vizilom+'"'+bebra
         time.sleep(3)
         if resp.status_code == 200:
             supchik = BeautifulSoup(resp.content, "lxml")

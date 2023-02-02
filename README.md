@@ -7,4 +7,4 @@ cd xss-vuln
 pip3 install -r requirements.txt 
 python3 xss.py
 ```
-![img](https://i.imgur.com/w5JmUu3.png)
+![img](https://github.com/htw-lamer111/xss-vuln/blob/main/look1.png)

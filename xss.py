@@ -44,7 +44,7 @@ try:
                     `*+-._             _.-+*'                
                           `"*-------*"'⠀⠀
 
-    
+
     ===================================================================================
     =   ==   ===      ====      =============  ====  ==  ====  ==  ========  =======  =
     ==  ==  ===  ====  ==  ====  ============  ====  ==  ====  ==  ========   ======  =
@@ -56,7 +56,7 @@ try:
     ==  ==  ===  ====  ==  ====  ==============    ====   ==   ==  ========  ======   =
     =  ====  ===      ====      ================  ======      ===        ==  =======  =
     ===================================================================================
-    github: https://github.com/htw-lamer111                                                                                      
+                                                                                                          
         """)
     print("=" * 100)
     print("site example https://site.com/index.php?id=1")
@@ -74,9 +74,9 @@ try:
             for script in supchik.find_all(bebra1):
                 script=str(script)
                 if script == bebra:
-                    print("XSS FOUND:", respurl )
+                    print( "[", Fore.GREEN, "YES",Fore.GREEN,"]: ",respurl )
                 elif script != bebra:
-                    print("XSS NOT FOUND: ",respurl )   
+                    print( "[", Fore.RED, "NO",Fore.GREEN,"]: ",respurl )   
                 else:
                     print("XSS NOT FOUND: ",respurl )
                     

@@ -1,5 +1,5 @@
 # xss-vuln
-This  tool will show xss vulnerabilities im not a good programmer but it is what it is
+This  tool will show xss vulnerabilities im not a good programmer but it is what it is<br />
 Project isn't dead I'm gonna upload new version soon
 # Install 
 ```

@@ -1,5 +1,6 @@
 # xss-vuln
 This  tool will show xss vulnerabilities im not a good programmer but it is what it is
+Project isn't dead I'm gonna upload new version soon
 # Install 
 ```
 git clone https://github.com/htw-lamer111/xss-vuln

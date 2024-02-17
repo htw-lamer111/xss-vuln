@@ -9,3 +9,5 @@ pip3 install -r requirements.txt
 python3 xss.py
 ```
 ![img](https://github.com/htw-lamer111/xss-vuln/blob/main/look1.png)
+
+# Big updte is going ro be realased soon!

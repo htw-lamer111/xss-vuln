@@ -1,3 +1,7 @@
 requests
 colorama
 beautifulsoup4
+
+fade
+argparse
+urllib

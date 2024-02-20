@@ -14,6 +14,7 @@ python3 -m http.server
 
 # New feauters
 Web page displaying recent targets<br/>
-Parameter recognizing
+Parameter recognizing<br />
+Headers
 
 ![img](https://github.com/htw-lamer111/xss-vuln/blob/main/img/web_page.png)

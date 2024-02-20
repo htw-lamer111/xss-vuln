@@ -32,4 +32,4 @@ def parse():
 
     with open(file_path, 'w') as f:
         f.write(str(soup))
-parse()
+

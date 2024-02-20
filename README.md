@@ -6,8 +6,8 @@ Project isn't dead I'm gonna upload new version soon
 git clone https://github.com/htw-lamer111/xss-vuln
 cd xss-vuln 
 pip3 install -r requirements.txt 
-python3 xss.py
+python3 main.py
 ```
 ![img](https://github.com/htw-lamer111/xss-vuln/blob/main/look1.png)
 
-# Big updte is going to be realased soon!
+

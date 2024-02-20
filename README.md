@@ -8,6 +8,6 @@ cd xss-vuln
 pip3 install -r requirements.txt 
 python3 main.py
 ```
-![img](https://github.com/htw-lamer111/xss-vuln/blob/main/look1.png)
+![img](https://github.com/htw-lamer111/xss-vuln/blob/main/img/preview.png)
 
 

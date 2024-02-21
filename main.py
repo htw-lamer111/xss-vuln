@@ -39,7 +39,7 @@ class Main:
 
                 try:
                     if payload in resp.text:
-                        print( f"{Fore.GREEN}[+] VULN FOUND:  {args.url} \n{Fore.RED}[?] PAYLOAD:  {payload}" )     
+                        print( f"{Fore.GREEN}[+] VULN FOUND:  {args.url} \n{Fore.RED}[?] {Fore.WHITE}PAYLOAD:  {payload}" )     
                     else:
                         pass
                 except Exception as e:

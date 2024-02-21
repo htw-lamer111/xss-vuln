@@ -5,7 +5,7 @@ xss-vuln is a simple reflected xss scanner
 git clone https://github.com/htw-lamer111/xss-vuln
 cd xss-vuln 
 pip3 install -r requirements.txt 
-python3 main.py -url
+python3 main.py 
 cd web
 python3 -m http.server
 ```

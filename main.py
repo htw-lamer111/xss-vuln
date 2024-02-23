@@ -21,10 +21,10 @@ class Main:
         else:    
             header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
             formatted_dict = ', '.join(f'{key}: {value}' for key, value in header.items())
+            print(formatted_dict)
         for param_name in parsed_url.query.split("&"):
             print(f"{Fore.GREEN}[*]{Fore.WHITE} Found parameters:", {param_name.split("=")[0]}) 
 
-        print(formatted_dict)
         with open(targ_path, "r+") as target:
             if os.stat(targ_path).st_size == 0:
                 target.write(args.url)

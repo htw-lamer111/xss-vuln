@@ -12,8 +12,8 @@ python3 -m http.server
 ![img](https://github.com/htw-lamer111/xss-vuln/blob/main/img/preview.png)
 
 # New feauters
-Web page displaying recent targets<br/>
-Parameter recognizing<br />
-Custom headers
+**Web page displaying recent targets**<br/>
+**Parameter recognizing**<br />
+**Custom headers**
 
 ![img](https://github.com/htw-lamer111/xss-vuln/blob/main/img/web_page.png)

@@ -10,15 +10,17 @@ from argparse import ArgumentParser
 class Main:
     def __init__(self):
         self.reflected_xss()
-
     def reflected_xss(self):
         bann()
         print(f"{Fore.YELLOW}[!] Starting attack on {args.url}")
         file = open("list1.txt", "r", encoding="utf-8")
         onstring = file.read().split("\n")[:-1]
         parsed_url = urlparse(args.url)
-        header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
-        formatted_dict = ', '.join(f'{key}: {value}' for key, value in header.items())
+        if args.header is not None:
+            header = {"User-Agent": "{}".format(args.header)}
+        else:    
+            header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
+            formatted_dict = ', '.join(f'{key}: {value}' for key, value in header.items())
         for param_name in parsed_url.query.split("&"):
             print(f"{Fore.GREEN}[*]{Fore.WHITE} Found parameters:", {param_name.split("=")[0]}) 
 

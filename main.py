@@ -33,7 +33,7 @@ class Main:
                 target.seek(0,0)
                 target.write(f"{args.url}\n" + cont)
                     
-            parse()
+        parse()
         try:    
             get_url = parsed_url.scheme +  "://" + parsed_url.netloc + parsed_url.path
             for payload in onstring:

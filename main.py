@@ -35,10 +35,11 @@ class Main:
                     
         parse()
         try:    
-            get_url = parsed_url.scheme +  "://" + parsed_url.netloc + parsed_url.path
+            
             for payload in onstring:
-                
-                resp = requests.get(get_url, timeout=30, headers=header, params=payload)
+                respurl = args.url+'"'+payload
+                resp = requests.get(respurl, timeout=30, headers=header)
+
 
                 if payload in resp.text:
                     print( f"{Fore.GREEN}[+] VULN FOUND:  {args.url} \n{Fore.RED}[?] PAYLOAD:  {payload}" )     

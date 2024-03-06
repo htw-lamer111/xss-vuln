@@ -4,8 +4,12 @@
   font-family: "Press Start 2P", system-ui;
   font-size: 3.3rem;
   text-align: center;
-  padding: 10px;
+
   margin-bottom: 50px;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 ul {
@@ -21,9 +25,10 @@ ul {
 }
 .wr {
     overflow-y:scroll;
+    margin-bottom: 100px;
     width: auto;
-    max-height:500px;
-    margin-bottom: 50px;
+    max-height:400px;
+    margin: 0px 50px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

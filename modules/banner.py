@@ -18,7 +18,7 @@ def bann():
                                   
                   ╔════════════════════════════╗ 
                   ║  Creator:htw               ║
-                  ║  github:/htw-lamer111      ║
+                  ║  github:/htw-lamer         ║
                   ║  v.1.3                     ║
                   ╚════════════════════════════╝  
 

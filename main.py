@@ -12,7 +12,7 @@ class Main:
         self.reflected_xss()
     def reflected_xss(self):
         bann()
-        print(f"{Fore.YELLOW}[...] Starting attack on {args.url}")
+        print(f"{Fore.YELLOW}[...] {Fore.WHITE} Starting attack on {args.url}")
         file = open("list1.txt", "r", encoding="utf-8")
         onstring = file.read().split("\n")[:-1]
         parsed_url = urlparse(args.url)

@@ -38,7 +38,7 @@ class Main:
             
             for payload in onstring:
                 respurl = args.url+'"'+payload
-                resp = requests.get(respurl, timeout=30, headers=header)
+                resp = requests.get(respurl,  headers=header)
 
 
                 if payload in resp.text:

@@ -1,6 +1,6 @@
 from modules import *
 import os
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse
 from web import *
 import requests
 import random

@@ -3,6 +3,7 @@ import os
 from urllib.parse import urlparse
 from web import *
 import requests
+import sys
 import random
 from colorama import Fore
 from argparse import ArgumentParser
@@ -12,8 +13,21 @@ class Main:
         self.reflected_xss()
     def reflected_xss(self):
         bann()
-        print(f"{Fore.YELLOW}[...] {Fore.WHITE} Starting attack on {args.url}")
-        file = open("list1.txt", "r", encoding="utf-8")
+        PayloadList = "list1.txt"
+
+        if args.l is not None:
+            PayloadList = args.l
+        else:
+            pass   
+
+            print(f"{args.l} was not found")
+
+        print(f"{Fore.YELLOW}[!] {Fore.WHITE} Starting attack on {args.url}")
+        try:
+            file = open(PayloadList, "r", encoding="utf-8")
+        except:
+            print(f"{args.l} was not found")
+            sys.exit(0)
         onstring = file.read().split("\n")[:-1]
         parsed_url = urlparse(args.url)
         if args.header is not None:
@@ -22,6 +36,8 @@ class Main:
             header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
             formatted_dict = ', '.join(f'{key}: {value}' for key, value in header.items())
             print(f'{Fore.RED}[-]{Fore.WHITE} {formatted_dict}')
+
+ 
         for param_name in parsed_url.query.split("&"):
             print(f"{Fore.GREEN}[*]{Fore.WHITE} Found parameters:", {param_name.split("=")[0]}) 
 
@@ -37,9 +53,11 @@ class Main:
         try:    
             
             for payload in onstring:
-                respurl = args.url+'"'+payload
-                resp = requests.get(respurl,  headers=header)
-
+                par = f'{parsed_url.query}={payload}'
+                get_url = (f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}?{par}") 
+                
+                resp = requests.get(get_url, headers=header , verify=False)
+                
 
                 if payload in resp.text:
                     print( f"{Fore.GREEN}[+] {Fore.WHITE}VULN FOUND:  {args.url} \n{Fore.RED}[?]{Fore.WHITE} PAYLOAD:  {payload}" )     

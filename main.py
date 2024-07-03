@@ -36,7 +36,7 @@ class Main:
             formatted_dict = ', '.join(f'{key}: {value}' for key, value in self.header.items())
             print(f'{Fore.RED}[-]{Fore.WHITE} {formatted_dict}')
         
-        print("="*50)
+        print("\n")
 
     def reflected_xss(self):
         print(f"{Fore.LIGHTGREEN_EX}[i] {Fore.WHITE} Starting attack on {args.url}")

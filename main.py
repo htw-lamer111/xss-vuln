@@ -16,14 +16,15 @@ class Main:
         self.header = None
 
     def check_up(self):
+        bann()
         self.PayloadList = "list1.txt"
         if args.l is not None:
             self.PayloadList = args.l
         else:
-            pass   
+            print(f"{Fore.GREEN}[i]{Fore.WHITE} using default payload list: lsit1.txt")
 
         if args.url is None:
-            print(f"{Fore.RED}No url argument stated ")
+            print(f"{Fore.RED}No url stated, quitting")
             sys.exit(0)
         else:
             pass
@@ -34,12 +35,11 @@ class Main:
             self.header = {"User-Agent": "{}".format(random.choice(open("User-agent.txt","r").read().splitlines()))}
             formatted_dict = ', '.join(f'{key}: {value}' for key, value in self.header.items())
             print(f'{Fore.RED}[-]{Fore.WHITE} {formatted_dict}')
-    def reflected_xss(self):
-        bann()
         
+        print("="*50)
 
-    
-        print(f"{Fore.YELLOW}[i] {Fore.WHITE} Starting attack on {args.url}")
+    def reflected_xss(self):
+        print(f"{Fore.LIGHTGREEN_EX}[i] {Fore.WHITE} Starting attack on {args.url}")
         try:
             file = open(self.PayloadList, "r", encoding="utf-8")
         except:
@@ -51,7 +51,7 @@ class Main:
 
  
         for param_name in parsed_url.query.split("&"):
-            print(f"{Fore.GREEN}[*]{Fore.WHITE} Found parameters:", {param_name.split("=")[0]}) 
+            print(f"{Fore.YELLOW}[*]{Fore.WHITE} Found parameters:", {param_name.split("=")[0]}) 
 
         with open(targ_path, "r+") as target:
             if os.stat(targ_path).st_size == 0:

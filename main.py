@@ -21,7 +21,7 @@ class Main:
         if args.l is not None:
             self.PayloadList = args.l
         else:
-            print(f"{Fore.GREEN}[i]{Fore.WHITE} using default payload list: lsit1.txt")
+            print(f"{Fore.GREEN}[i]{Fore.WHITE} using default payload list: list1.txt")
 
         if args.url is None:
             print(f"{Fore.RED}No url stated, quitting")

@@ -67,6 +67,13 @@ ul li {
 button{
     float: right;
 }
+#message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Didact Gothic", sans-serif;
+}
 
 .fm{
     text-decoration: none;

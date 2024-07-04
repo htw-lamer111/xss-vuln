@@ -11,10 +11,34 @@
 <div class="con" >
 <div class="wr">
 <ul id="rows">
+</ul>    
 </div>
 </div>
 </body>
 <footer>
 
-<div class="fm"><h1>made by <a href="https://github.com/htw-lamer111" style="text-decoration:none;"><span style="color: #DC143C;">htw</span></a> with</h1></div>
+<div class="fm"><h1>made by <a href="https://github.com/htw-lamer111" style="text-decoration:none;"><span style="color: #DC143C;">htw</span></a> with ♥</h1></div>
 </footer>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var container = document.getElementById("rows");
+
+            function checkContainer() {
+                if (container.children.length === 0) {
+                    var message = document.createElement("div");
+                    message.id = "message";
+                    message.textContent = "No targets yet :( ";
+                    container.appendChild(message);
+                } else {
+                    var message = document.getElementById("message");
+                    if (message) {
+                        container.removeChild(message);
+                    }
+                }
+            }
+
+            // Initial check
+            checkContainer();
+
+        });
+</script>

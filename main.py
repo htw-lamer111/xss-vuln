@@ -68,7 +68,7 @@ class Main:
                 par = f'{parsed_url.query}={payload}'
                 get_url = (f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}?{par}") 
                 
-                resp = requests.get(get_url, headers=self.header, verify=False)
+                resp = requests.get(get_url, headers=self.header)
                 
 
                 if payload in resp.text:

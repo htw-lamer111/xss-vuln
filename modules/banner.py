@@ -22,7 +22,7 @@ def bann():
                   ║  v.1.3                     ║
                   ╚════════════════════════════╝  
 
-
+                  For education purposes only !
                   
                           
         '''

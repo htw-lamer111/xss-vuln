@@ -39,7 +39,7 @@ class Main:
         print("\n")
 
     def reflected_xss(self):
-        print(f"{Fore.LIGHTGREEN_EX}[i] {Fore.WHITE} Starting attack on {args.url}")
+        print(f"{Fore.LIGHTGREEN_EX}[i] {Fore.WHITE}Starting attack on {args.url}")
         try:
             file = open(self.PayloadList, "r", encoding="utf-8")
         except:

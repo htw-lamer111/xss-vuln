@@ -54,6 +54,11 @@ class Main:
             print(f"{Fore.YELLOW}[*]{Fore.WHITE} Found parameters:", {param_name.split("=")[0]}) 
 
         with open(targ_path, "r+") as target:
+            lines = target.readlines()
+            for line in lines:
+                if line.find(args.url) != -1:
+                    pass
+
             if os.stat(targ_path).st_size == 0:
                 target.write(args.url)
             else:

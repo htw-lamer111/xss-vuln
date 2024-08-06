@@ -58,6 +58,7 @@ class Main:
             for line in lines:
                 if line.find(args.url) != -1:
                     pass
+                    print("there is alreADU")
 
             if os.stat(targ_path).st_size == 0:
                 target.write(args.url)

@@ -81,7 +81,7 @@ class Main:
                     c+=1
                 else:
                     pass
-            print(f"{Fore.GREEN}[+]{Fore.WHITE}Scan finished {c} vulnerabilities found")
+            print(f"{Fore.GREEN}[+]{Fore.WHITE} Scan finished {c} vulnerabilities found")
         except requests.exceptions.ReadTimeout:
             print("Server isn't responding")                                         
         except requests.exceptions.MissingSchema:

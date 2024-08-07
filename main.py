@@ -80,7 +80,7 @@ class Main:
                     print( f"{Fore.GREEN}[+] {Fore.WHITE}VULN FOUND:  {get_url} \n{Fore.RED}[?]{Fore.WHITE} PAYLOAD:  {payload}" )     
                 else:
                     pass
-
+            
         except requests.exceptions.ReadTimeout:
             print("Server isn't responding")                                         
         except requests.exceptions.MissingSchema:

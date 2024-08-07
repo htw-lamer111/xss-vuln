@@ -68,7 +68,7 @@ class Main:
                     
         parse()
         try:    
-            
+            c = 0
             for payload in onstring:
                 par = f'{parsed_url.query}={payload}'
                 get_url = (f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}?{par}") 
@@ -78,9 +78,10 @@ class Main:
 
                 if payload in resp.text:
                     print( f"{Fore.GREEN}[+] {Fore.WHITE}VULN FOUND:  {get_url} \n{Fore.RED}[?]{Fore.WHITE} PAYLOAD:  {payload}" )     
+                    c+=1
                 else:
                     pass
-            
+            print(f"{Fore.GREEN}[+]{Fore.WHITE}Scan finished {c} vulnerabilities found")
         except requests.exceptions.ReadTimeout:
             print("Server isn't responding")                                         
         except requests.exceptions.MissingSchema:

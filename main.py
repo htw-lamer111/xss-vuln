@@ -24,7 +24,7 @@ class Main:
             print(f"{Fore.GREEN}[i]{Fore.WHITE} Using default payload list: list1.txt")
 
         if args.url is None:
-            print(f"{Fore.RED}No url stated, quitting")
+            print(f"{Fore.RED}No url stated, quitting{Fore.WHITE}")
             sys.exit(0)
         else:
             pass

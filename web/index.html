@@ -41,4 +41,21 @@
             checkContainer();
 
         });
+        (function() {
+    var minScale = 0.75;
+    var maxScale = 1.10;
+
+    document.addEventListener('gesturestart', function(e) {
+        e.preventDefault(); // Prevent zoom gestures on mobile
+    });
+
+    window.addEventListener('resize', function() {
+        var scale = window.innerWidth / document.documentElement.clientWidth;
+        if (scale < minScale) {
+            document.body.style.zoom = minScale;
+        } else if (scale > maxScale) {
+            document.body.style.zoom = maxScale;
+        }
+    });
+})();
 </script>

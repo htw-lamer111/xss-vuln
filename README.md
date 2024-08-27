@@ -6,8 +6,6 @@ git clone https://github.com/htw-lamer111/xss-vuln
 cd xss-vuln 
 pip3 install -r requirements.txt 
 python3 main.py 
-cd web
-python3 -m http.server
 ```
 ![img](https://github.com/htw-lamer111/xss-vuln/blob/main/img/preview.png)
 

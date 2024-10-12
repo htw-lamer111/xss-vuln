@@ -62,5 +62,3 @@ def bann():
     for line in info_text.splitlines():
         centered_line = center_text(line.strip(), terminal_width)
         print(centered_line)
-
-bann()

@@ -81,7 +81,7 @@ class Main:
                 if payload in resp.text:
                     print(f"{Fore.GREEN}[+] {Fore.WHITE}VULN FOUND:  {get_url} \n{Fore.RED}[?]{Fore.WHITE} PAYLOAD:  {payload}")
                     
-                    self.content = content + f"{payload}\n"
+                    self.content.append(payload)
                     c += 1
                 else:
                     print(get_url)

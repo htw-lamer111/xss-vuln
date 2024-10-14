@@ -76,10 +76,8 @@ button{
 }
 
 .fm{
-
     text-decoration: none;
     font-size:13px;
     bottom: 10px; width: 100%; text-align: center;
-    position:fixed;
     font-family: "Didact Gothic", sans-serif;
 }

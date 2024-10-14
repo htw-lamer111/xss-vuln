@@ -8,7 +8,8 @@ import sys
 import random
 from colorama import Fore
 from argparse import ArgumentParser
-
+import urllib
+import time
 class Main:
     def __init__(self):
         self.check_up()
@@ -23,10 +24,10 @@ class Main:
         if args.l is not None:
             self.PayloadList = args.l
         else:
-            print(f"{Fore.GREEN}[i]{Fore.WHITE} using default payload list: list1.txt")
+            print(f"{Fore.GREEN}[i]{Fore.WHITE} Using default payload list: list1.txt")
 
         if args.url is None:
-            print(f"{Fore.RED}No url stated, quitting{Fore.WHITE}")
+            print(f"{Fore.RED}[-] {Fore.WHITE}No url stated, quitting")
             sys.exit(0)
         else:
             pass
@@ -68,21 +69,23 @@ class Main:
                     target.write(f"{args.url}\n" + cont)
 
         try:
+            c = 0
             for payload in onstring:
-                par = f'{parsed_url.query}={payload}'
+                parameters = urllib.parse.parse_qsl(parsed_url.query, keep_blank_values=True)
+                par = f"{parameters}'{payload}"
                 get_url = f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}?{par}"
-
+                time.sleep(1)
                 resp = requests.get(get_url, headers=self.header)
 
-                c = 0
+                
                 if payload in resp.text:
                     print(f"{Fore.GREEN}[+] {Fore.WHITE}VULN FOUND:  {get_url} \n{Fore.RED}[?]{Fore.WHITE} PAYLOAD:  {payload}")
                     
-                    self.content.append(payload)
+                    self.content = content + f"{payload}\n"
                     c += 1
                 else:
                     print(get_url)
-            print("SCan finished")
+            print(f"({Fore.MAGENTA}•{Fore.WHITE}) Scan finished")
             if c == 0:
                 self.content = False 
         except requests.exceptions.ReadTimeout:

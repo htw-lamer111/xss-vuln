@@ -83,8 +83,6 @@ class Main:
                     
                     self.content.append(payload)
                     c += 1
-                else:
-                    print(get_url)
             print(f"({Fore.MAGENTA}•{Fore.WHITE}) Scan finished")
             if c == 0:
                 self.content = False 

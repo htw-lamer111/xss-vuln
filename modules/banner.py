@@ -35,7 +35,7 @@ def center_text(text):
     return Center.XCenter(text)
 
 def bann():
-    Write.Print(center_text(banner_text), Colors.red_to_white, interval=0.035)
+    Write.Print(center_text(banner_text), Colors.red_to_white, interval=0.0003)
     
 
 

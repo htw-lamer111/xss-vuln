@@ -16,7 +16,7 @@ class Main:
         self.reflected_xss()
         self.PayloadList = None
         self.header = None
-        self.content = None 
+        self.content = []
 
     def check_up(self):
         bann()

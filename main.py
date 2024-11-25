@@ -10,13 +10,16 @@ from colorama import Fore
 from argparse import ArgumentParser
 import urllib
 import time
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 class Main:
     def __init__(self):
         self.check_up()
         self.reflected_xss()
         self.PayloadList = None
         self.header = None
-        self.content = []
+        self.contents = []
 
     def check_up(self):
         bann()
@@ -72,20 +75,28 @@ class Main:
             c = 0
             for payload in onstring:
                 parameters = urllib.parse.parse_qsl(parsed_url.query, keep_blank_values=True)
-                par = f"{parameters}'{payload}"
-                get_url = f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}?{par}"
-                time.sleep(1)
-                resp = requests.get(get_url, headers=self.header)
 
-                
+                if parameters:
+                    parameters[0] = (parameters[0][0], payload)
+
+                par = urllib.parse.urlencode(parameters)
+                get_url = f"{parsed_url.scheme}://{parsed_url.netloc}{parsed_url.path}?{par}"
+
+                time.sleep(1)
+                resp = requests.get(get_url, headers=self.header, verify=False)
+
                 if payload in resp.text:
                     print(f"{Fore.GREEN}[+] {Fore.WHITE}VULN FOUND:  {get_url} \n{Fore.RED}[?]{Fore.WHITE} PAYLOAD:  {payload}")
                     
+                    if not hasattr(self, 'content'):
+                        self.content = []
                     self.content.append(payload)
                     c += 1
+                else:
+                    print(f"{Fore.RED}NOT VULNERABLE:{Fore.WHITE} {get_url}")
             print(f"({Fore.MAGENTA}•{Fore.WHITE}) Scan finished")
             if c == 0:
-                self.content = False 
+                self.content = False
         except requests.exceptions.ReadTimeout:
             print("Server isn't responding")
         except requests.exceptions.MissingSchema:
@@ -93,7 +104,8 @@ class Main:
         except KeyboardInterrupt:
             print("Goodbye...")
 
-        parse(self.content, args.url)  
+        parse(self.content, args.url)
+ 
 
 if __name__ == "__main__":
     tool = Main()

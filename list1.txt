@@ -1,9 +1,5 @@
 <script>alert(1)</script>  
-<script>alert(2)</script>
-medium--> Ë«Ð´ÈÆ¹ý£º<sc<script>ript>alert(4)</script>
-	    ´óÐ¡Ð´»ìÏýÈÆ¹ý£º<ScRipt>alert(5)</script>
-	<img src=1 onerror=alert(7)>
-onmouseover=¡¯alert(9)¡¯
+<img src=1 onerror=alert(7)>
 <script>alert(11);</script> 
 >"'><img src="javascript.:alert(12)">
 >"'><script>alert(13)</script>
